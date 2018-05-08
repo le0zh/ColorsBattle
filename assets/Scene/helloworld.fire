@@ -69,10 +69,10 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 13
+        "__id__": 14
       },
       {
-        "__id__": 14
+        "__id__": 15
       }
     ],
     "_prefab": null,
@@ -313,6 +313,9 @@
       },
       {
         "__id__": 12
+      },
+      {
+        "__id__": 13
       }
     ],
     "_prefab": null,
@@ -333,8 +336,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 100,
-      "height": 40
+      "width": 144,
+      "height": 52
     },
     "_rotationX": 0,
     "_rotationY": 0,
@@ -342,8 +345,8 @@
     "_scaleY": 2,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 5,
-      "y": -301
+      "x": 0,
+      "y": -289
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -372,9 +375,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_cascadeOpacityEnabled": true,
@@ -435,7 +438,7 @@
     },
     "_enabled": true,
     "_spriteFrame": {
-      "__uuid__": "f0048c10-f03e-4c97-b9d3-3506e1d58952"
+      "__uuid__": "1cee6e78-c3a4-4e13-a4ad-a3c9442c0da1"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -460,7 +463,7 @@
       "__id__": 8
     },
     "_enabled": true,
-    "transition": 2,
+    "transition": 3,
     "pressedColor": {
       "__type__": "cc.Color",
       "r": 255,
@@ -495,7 +498,7 @@
       "a": 255
     },
     "_N$normalSprite": {
-      "__uuid__": "f0048c10-f03e-4c97-b9d3-3506e1d58952"
+      "__uuid__": "1cee6e78-c3a4-4e13-a4ad-a3c9442c0da1"
     },
     "_N$pressedSprite": {
       "__uuid__": "e9ec654c-97a2-4787-9325-e6a10375219a"
@@ -515,6 +518,32 @@
     "_N$target": {
       "__id__": 8
     }
+  },
+  {
+    "__type__": "cc.Widget",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 8
+    },
+    "_enabled": true,
+    "isAlignOnce": true,
+    "_target": null,
+    "_alignFlags": 20,
+    "_left": 0,
+    "_right": 0,
+    "_top": 0,
+    "_bottom": 227,
+    "_verticalCenter": 0,
+    "_horizontalCenter": 0,
+    "_isAbsLeft": true,
+    "_isAbsRight": true,
+    "_isAbsTop": true,
+    "_isAbsBottom": true,
+    "_isAbsHorizontalCenter": true,
+    "_isAbsVerticalCenter": true,
+    "_originalWidth": 0,
+    "_originalHeight": 0
   },
   {
     "__type__": "cc.Canvas",
