@@ -13,6 +13,9 @@ export default class NewClass extends cc.Component {
     @property(cc.Label)
     rightRatioLabel: cc.Label = null;
 
+    @property(cc.Button)
+    restartButton: cc.Button = null;
+
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -21,6 +24,10 @@ export default class NewClass extends cc.Component {
       this.scoreLabel.string = `${GameData.totalScore}`;
       this.totalQuestionLabel.string = `${GameData.totalQuestion}`;
       this.rightRatioLabel.string = `${((GameData.totalRight / GameData.totalQuestion) * 100).toFixed(2)}%`;
+
+      this.restartButton.node.on("click", function(e){
+        cc.director.loadScene('Game');
+      }, this);
     }
 
     // tmpScore: number = 0;

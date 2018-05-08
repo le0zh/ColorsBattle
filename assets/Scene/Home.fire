@@ -145,8 +145,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 853,
-      "height": 1280
+      "width": 794,
+      "height": 1192
     },
     "_rotationX": 0,
     "_rotationY": 0,
@@ -173,7 +173,7 @@
     },
     "_enabled": true,
     "_spriteFrame": {
-      "__uuid__": "925de488-d66d-415d-aedd-e5fb0568406f"
+      "__uuid__": "15465ee6-49b9-48bd-8f6a-6322066f5ad1"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -213,9 +213,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 46,
-      "g": 125,
-      "b": 50,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_cascadeOpacityEnabled": true,
@@ -226,8 +226,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 323,
-      "height": 60
+      "width": 485,
+      "height": 90
     },
     "_rotationX": 0,
     "_rotationY": 0,
@@ -254,9 +254,9 @@
     },
     "_enabled": true,
     "_useOriginalSize": false,
-    "_actualFontSize": 60,
-    "_fontSize": 60,
-    "_lineHeight": 60,
+    "_actualFontSize": 90,
+    "_fontSize": 90,
+    "_lineHeight": 90,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -280,7 +280,7 @@
     "_alignFlags": 1,
     "_left": 0,
     "_right": 0,
-    "_top": 345,
+    "_top": 330,
     "_bottom": 0,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
@@ -357,7 +357,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Label",
+    "_name": "New Label",
     "_objFlags": 0,
     "_parent": {
       "__id__": 8
@@ -371,7 +371,7 @@
       }
     ],
     "_prefab": null,
-    "_id": "05BGDnqvNI7oVeLLPq2/Lx",
+    "_id": "8dPUSAF/5JEZ9Tmrb27RU+",
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
@@ -388,7 +388,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 100,
+      "width": 48,
       "height": 40
     },
     "_rotationX": 0,
@@ -416,18 +416,18 @@
     },
     "_enabled": true,
     "_useOriginalSize": false,
-    "_actualFontSize": 20,
-    "_fontSize": 20,
+    "_actualFontSize": 24,
+    "_fontSize": 24,
     "_lineHeight": 40,
-    "_enableWrapText": false,
+    "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
-    "_N$string": "START",
+    "_N$string": "开始",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
-    "_N$overflow": 1
+    "_N$overflow": 0
   },
   {
     "__type__": "cc.Sprite",
