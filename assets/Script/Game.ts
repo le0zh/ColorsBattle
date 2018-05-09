@@ -68,6 +68,7 @@ export default class NewClass extends cc.Component {
     this.buttonYes.node.on('click', this.onButtonYesClicked, this);
 
     this.countDown();
+    cc.director.preloadScene('GameOver');
   }
 
   onButtonNoClicked(e) {

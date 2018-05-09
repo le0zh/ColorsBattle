@@ -30,7 +30,7 @@ export default class NewClass extends cc.Component {
     
 
     start () {
-
+        cc.director.preloadScene('Game');
     }
 
     // update (dt) {}

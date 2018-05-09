@@ -16,11 +16,23 @@ export default class NewClass extends cc.Component {
     @property(cc.Button)
     restartButton: cc.Button = null;
 
+    @property(cc.Button)
+    rankButton: cc.Button = null;
+
+    @property(cc.Sprite)
+    display: cc.Sprite = null;
+
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
 
+    isShow: boolean = false;
+    tex:cc.Texture2D = null;
+
     start () {
+      this.isShow = false;
+      this.tex = new cc.Texture2D();
+
       this.scoreLabel.string = `${GameData.totalScore}`;
       this.totalQuestionLabel.string = `${GameData.totalQuestion}`;
       this.rightRatioLabel.string = `${((GameData.totalRight / GameData.totalQuestion) * 100).toFixed(2)}%`;
@@ -28,6 +40,26 @@ export default class NewClass extends cc.Component {
       this.restartButton.node.on("click", function(e){
         cc.director.loadScene('Game');
       }, this);
+
+      this.rankButton.node.on('click', this.showRank, this);
+    }
+
+    showRank() {
+      this.isShow = !this.isShow;
+
+      // 发送消息给子域
+      wx.postMessage({
+        message: this._isShow ? 'Show' : 'Hide'
+      });
+    }
+
+    updaetSubDomainCanvas () {
+      if (!this.tex) {
+          return;
+      }
+      this.tex.initWithElement(sharedCanvas);
+      this.tex.handleLoadedTexture();
+      this.display.spriteFrame = new cc.SpriteFrame(this.tex);
     }
 
     // tmpScore: number = 0;
@@ -41,5 +73,7 @@ export default class NewClass extends cc.Component {
     //   this.scoreLabel.string = `${this.tmpScore}`;
     // }
 
-    update (dt) {}
+    update (dt) {
+      this.updaetSubDomainCanvas();
+    }
 }
