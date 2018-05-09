@@ -31,7 +31,7 @@ export default class NewClass extends cc.Component {
   @property(cc.Node) answerWrongTip: cc.Node = null;
 
   @property(cc.Node) comboNode: cc.Node = null;
-  @property(cc.Label) comboLabel: cc.Label = null;
+      @property(cc.Label) comboLabel: cc.Label = null;
 
   @property(cc.Node) countDownTip: cc.Node = null;
 
@@ -47,7 +47,7 @@ export default class NewClass extends cc.Component {
   isSame: boolean = false;
 
   // 游戏时间，默认60秒
-  time: number = 59;
+  time: number = 5;
 
   // 连击数
   combo: number = 0;
