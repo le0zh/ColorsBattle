@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "92e2f87b-2f25-424a-bbfb-1166a75e7747",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "WhiteOneCloud": {
+      "ver": "1.0.3",
+      "uuid": "6c2ddd20-0abb-419b-ae17-c16d635cf64a",
+      "rawTextureUuid": "92e2f87b-2f25-424a-bbfb-1166a75e7747",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0.5,
+      "offsetY": -0.5,
+      "trimX": 54,
+      "trimY": 40,
+      "width": 944,
+      "height": 824,
+      "rawWidth": 1051,
+      "rawHeight": 903,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
