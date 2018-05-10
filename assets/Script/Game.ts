@@ -99,7 +99,7 @@ export default class NewClass extends cc.Component {
         this.comboNode.runAction(cc.sequence(moveInAction, moveOutAction));
       }
 
-      GameData.totalScore += this.scorePerQuestion + (this.combo - 1) * 2;
+      GameData.totalScore += this.scorePerQuestion + this.combo > 1 ? (this.combo - 1) * 2 : 0;
       this.scoreLabel.string = `${GameData.totalScore}`;
       GameData.totalRight++;
 
@@ -108,15 +108,15 @@ export default class NewClass extends cc.Component {
       // 回答错误
       this.answerRightTip.active = false;
       this.answerWrongTip.active = true;
+      this.combo = 0;
 
       this.answerWrongTip.runAction(cc.sequence(showAction, hideAction));
     }
   }
 
   checkCombo () {
-    console.log(Date.now() - this.lastRightTime);
-    // 2秒内算上连击
-    if(Date.now() - this.lastRightTime <= 2000){
+    // 连击
+    if(Date.now() - this.lastRightTime <= 1500){
       this.combo++;
     }else {
       this.combo = 0;
