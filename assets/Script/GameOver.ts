@@ -15,7 +15,7 @@ export default class NewClass extends cc.Component {
   @property(cc.Button) rankButton: cc.Button = null;
 
   @property(cc.Sprite) display: cc.Sprite = null;
-  
+  @property(cc.Sprite) bgRay: cc.Sprite = null;
 
   // LIFE-CYCLE CALLBACKS:
 
@@ -28,41 +28,60 @@ export default class NewClass extends cc.Component {
     this.isShow = false;
     this.tex = new cc.Texture2D();
 
+    wx.showShareMenu();
+
+    wx.onShareAppMessage(function() {
+      // 用户点击了“转发”按钮
+      return {
+        title: `我在color大作战中得了${GameData.totalScore}分！！！`
+      };
+    });
+
     this.scoreLabel.string = `${GameData.totalScore}`;
-    this.totalQuestionLabel.string = `${GameData.totalQuestion}`;
-    this.rightRatioLabel.string = `${(
-      GameData.totalRight /
-      GameData.totalQuestion *
-      100
-    ).toFixed(2)}%`;
+    // this.totalQuestionLabel.string = `${GameData.totalQuestion}`;
+    // this.rightRatioLabel.string = `${(
+    //   GameData.totalRight /
+    //   GameData.totalQuestion *
+    //   100
+    // ).toFixed(2)}%`;
 
     this.restartButton.node.on(
       "click",
       function(e) {
-        cc.director.loadScene("Game");
+        cc.director.loadScene("Home");
       },
       this
     );
 
+    const rotation = cc.rotateBy(10, 360);
+    this.bgRay.node.runAction(cc.repeatForever(rotation));
+
     this.rankButton.node.on("click", this.showRank, this);
-        
-    wx.setUserCloudStorage({
-      KVDataList: [
-        {
-          key: "score",
-          value: `${GameData.totalScore}`
-        }
-      ]
-    });
+
+      wx.setUserCloudStorage({
+        KVDataList: [
+          {
+            key: "score",
+            value: `${GameData.totalScore}`
+          }
+        ]
+      });
+
+      // 发送消息给子域
+      wx.postMessage({
+        message: "Show"
+      });
   }
 
   showRank() {
     this.isShow = !this.isShow;
 
-    // 发送消息给子域
-    wx.postMessage({
-      message: this.isShow ? "Show" : "Hide"
-    });
+    // if (wx) {
+    //   // 发送消息给子域
+    //   wx.postMessage({
+    //     message: this.isShow ? "Show" : "Hide"
+    //   });
+    // }
   }
 
   updaetSubDomainCanvas() {

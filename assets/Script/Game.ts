@@ -16,6 +16,8 @@ const hideAction = cc.scaleTo(0.1, 0, 0).easing(cc.easeBackIn());
 const moveInAction = cc.moveTo(0.5, -242, 382).easing(cc.easeBackOut());
 const moveOutAction = cc.moveTo(0.2, -393, 382).easing(cc.easeBackIn());
 
+const moveRightAction = cc.moveTo(59, 2065, 0);
+
 @ccclass
 export default class NewClass extends cc.Component {
   @property(cc.Label) labelMeaning: cc.Label = null;
@@ -31,7 +33,7 @@ export default class NewClass extends cc.Component {
   @property(cc.Node) answerWrongTip: cc.Node = null;
 
   @property(cc.Node) comboNode: cc.Node = null;
-      @property(cc.Label) comboLabel: cc.Label = null;
+  @property(cc.Label) comboLabel: cc.Label = null;
 
   @property(cc.Node) countDownTip: cc.Node = null;
 
@@ -43,11 +45,13 @@ export default class NewClass extends cc.Component {
   @property(cc.Label) timeLabel: cc.Label = null;
   @property(cc.Label) scoreLabel: cc.Label = null;
 
+  @property(cc.Sprite) bgSprite: cc.Sprite = null;
+
   isGameStarted: boolean = false;
   isSame: boolean = false;
 
   // 游戏时间，默认60秒
-  time: number = 5;
+  time: number = 60;
 
   // 连击数
   combo: number = 0;
@@ -99,7 +103,7 @@ export default class NewClass extends cc.Component {
         this.comboNode.runAction(cc.sequence(moveInAction, moveOutAction));
       }
 
-      GameData.totalScore += this.scorePerQuestion + this.combo > 1 ? (this.combo - 1) * 2 : 0;
+      GameData.totalScore += this.scorePerQuestion + ((this.combo > 1) ? (this.combo - 1) * 2 : 0);
       this.scoreLabel.string = `${GameData.totalScore}`;
       GameData.totalRight++;
 
@@ -145,6 +149,9 @@ export default class NewClass extends cc.Component {
 
   onCountDownDone() {
     console.log('timer start now');
+
+    // 滚动背景
+    this.bgSprite.node.runAction(moveRightAction);
 
     this.card1.active = true;
     this.card2.active = true;
